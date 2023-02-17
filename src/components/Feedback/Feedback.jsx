@@ -12,7 +12,7 @@ export default function Feedback() {
   let total = good + neutral + bad;
   let positiveFeedbackPercentage = Math.round((good / total) * 100);
 
-  const handleIncrementGood = (option) => {
+  const handleIncrement = (option) => {
     if (option === 'good') setGood(prevState => prevState + 1);
     if (option === 'neutral') setNeutral(prevState => prevState + 1);
     if (option === 'bad') setBad(prevState => prevState + 1);
@@ -23,7 +23,7 @@ export default function Feedback() {
       <Section title="Please leave feedback">
         <FeedbackOptions
           options={Object.keys({good, neutral, bad})}
-          onLeaveFeedback={handleIncrementGood}
+          onLeaveFeedback={handleIncrement}
         />
       </Section>
       <Section title="Statistics">
